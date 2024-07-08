@@ -10,13 +10,14 @@ import React from 'react';
 // usar sempre o ComponentProps para criação e atribuição de propriedades a elementos.
 type InputProps = React.ComponentProps<'input'> & {
   label: string;
+  id: string;
 };
 
 const Input = ({ label, id, ...props }: InputProps) => {
   return (
     <div style={{ marginBottom: '1rem' }}>
       <label htmlFor={id}>{label}</label>
-      <input type="text" name={id} id={id} {...props} />
+      <input name={id} id={id} {...props} />
     </div>
   );
 };
